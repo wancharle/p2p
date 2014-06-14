@@ -40,7 +40,7 @@ public class ConsoleP2p {
 					try {
 						enderecoIpLookup = bufferReadLookup.readLine();
 					} catch (IOException e) {
-						System.err.println("*ERRO: erro ao tentar ler o endereço IP fornecido no comando lookup.");
+						System.err.println("*ERRO: erro ao tentar ler o endereï¿½o IP fornecido no comando lookup.");
 						e.printStackTrace();
 					}
 					
@@ -62,15 +62,6 @@ public class ConsoleP2p {
 					new EngineP2p().clientRequestLookup(enderecoIpLookup, chaveLookup);
 					System.out.println(">>> Comando \"lookup\" foi executado.");
 					
-					System.out.println(">>> Comando \"join\" inicializado através do lookup.");
-					System.out.println(">>> Juntando-se a rede...");
-					new EngineP2p().clientRequestJoin(EngineP2p.nodoP2p.getSucessorEnderecoIp());
-					System.out.println(">>> Comando \"join\" foi executado através do lookup.");
-					
-					System.out.println(">>> Comando \"update\" inicializado através do lookup.");
-					System.out.println(">>> Atualizando rede...");
-					new EngineP2p().clientRequestUpdate(EngineP2p.nodoP2p.getSucessorEnderecoIp());
-					System.out.println(">>> Comando \"update\" foi executado através do lookup.");
 					
 					break;	
 					
@@ -80,7 +71,7 @@ public class ConsoleP2p {
 					break;
 					
 				default:
-					System.err.println(">>> Comando \""+line+"\" não foi encontrado.");
+					System.err.println(">>> Comando \""+line+"\" nï¿½o foi encontrado.");
 					break;
 			}
 	    }
