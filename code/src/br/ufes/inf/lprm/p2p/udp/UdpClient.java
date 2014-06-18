@@ -49,11 +49,9 @@ public class UdpClient extends Thread {
 	  		  return;
 		  } 
 		  
-	      byte[] dadosEnvio = new byte[1024]; 
-	      dadosEnvio = mensagem.messageToSend(serverFlag);
+	      byte[] dadosEnvio = mensagem.messageToSend(serverFlag);
 	      System.out.println("*CLIENTE: Preparando conexão com o servidor "+ enderecoIp + " para envio de pacote.");
-	      //DatagramPacket pacoteEnviado = new DatagramPacket(dadosEnvio, dadosEnvio.length, ip, Constantes.PORTA); 
-	      DatagramPacket pacoteEnviado = new DatagramPacket(dadosEnvio, mensagem.messageToSend(serverFlag).length, ip, Constantes.PORTA); 
+	      DatagramPacket pacoteEnviado = new DatagramPacket(dadosEnvio,dadosEnvio.length, ip, Constantes.PORTA); 
 	      try {
 	    	  socketCliente.send(pacoteEnviado);
 	    	  System.out.println("*CLIENTE: Mensagem "+ Helper.bytesToHex(dadosEnvio) + " enviada ao servidor " + enderecoIp);

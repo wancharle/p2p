@@ -172,7 +172,7 @@ public class EngineP2p {
                 System.out.println("*SERVIDOR: Recebi mensagem desconhecida ");
                 break;
 		}
-	    if (dadosResposta == null) dadosResposta = new byte[1024];
+	   
 	    
 	    return dadosResposta;
 	}
